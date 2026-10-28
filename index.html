@@ -17,45 +17,179 @@
     -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
     <title>Strapinho</title>
+    <!-- CSS criado para aumentar o icone, 
+ lembrando de colocar o CSS após a ativação do Bootstrap
+ -->
+    <style>
+        /* Fundo experimental da página */
+        body {
+            background-color: rgb(160, 95, 160);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+
+        body>header {
+            background-color: blueviolet;
+            margin-top: 5rem
+        }
+
+        body>nav h1 {
+            color: rgb(176, 108, 207)
+        }
+
+        body>header i {
+            font-size: 4rem;
+        }
+
+        /* Em telas "md" (middle) */
+        @media screen and (min-width: 768px) {
+            body>main>aside {
+                width: 250px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <!-- Menu principal -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
+    <!-- 
+  Menu principal - Navbar 
+  Referências: https://www.w3schools.com/bootstrap5/bootstrap_navbar.php
+  OBS: Vamos substitulir `javascript:void(0)` pelo link de cada página.
+  -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="javascript:void(0)"> <i class="bi bi-bootstrap-fill  text-black"></i> Raphael Montes </a>
+            <!-- A "brand" (marca) pode ser um nome ou uma imagem. -->
+            <a class="navbar-brand text-dark" href="index.html">
+                <!-- Acrescentei um CSS para as cores do titulo -->
+                <h1>CLA Artes</h1></i>
+            </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon "></span>
             </button>
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Livros Publicados</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Compre aqui!</a>
-                    </li>
-                    <!--   Dropdown  -->
+                    <li class="nav-item "><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0)">Catálogo</a></li>
+                    <!--   Dropdown  
+                        Referências: https://www.w3schools.com/bootstrap5/bootstrap_navbar.php
+                       https://www.w3schools.com/bootstrap5/bootstrap_dropdowns.php 
+                       -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Sobre</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sobre</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Sobre o site</a></li>
-                            <li><a class="dropdown-item" href="#">Sobre o Autor</a></li>
+                            <li><a class="dropdown-item" href="#">Sobre a Loja</a></li>
+                            <li><a class="dropdown-item" href="#">Prazo e Pagemntos</a></li>
                             <li><a class="dropdown-item" href="#">Política de Privacidade</a></li>
-                            <li><hr class="dropdown-divider"></hr></li>
-                             <li><a class="dropdown-item" href="#">Faça contato</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                                </hr>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Faça contato</a></li>
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="text" placeholder="Search">
-                    <button class="btn btn-primary" type="button">Pesquisa.</button>
+                <!-- 
+                Formulário de pesquisa
+                Referências: https://www.w3schools.com/bootstrap5/bootstrap_forms.php
+                -->
+
+                <form class="d-flex mt-2 mt-md-0">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Digite aqui... ">
+                        <button class="btn bg-secondary" type="button"> <i class="bi bi-search"></i></button>
+                    </div>
                 </form>
             </div>
         </div>
     </nav>
+
+    <!--
+  Usando a técnica Jumbotron
+  Referências: https://www.w3schools.com/bootstrap5/bootstrap_jumbotron.php
+  -->
+    <header class="text-light">
+        <div class="container p-4">
+            <h1 class=" d-flex align-items-center gap-3 justify-content-center">
+                <i class="bi bi-bootstrap"></i> Strapinho
+            </h1>
+        </div>
+    </header>
+
+    <main class="container d-md-flex">
+        <section class=" bg-light p-3 flex-grow-1">
+
+            <!-- 
+        Exemplo de conteúdo desta página.
+        No futuro, virá do back-end.
+      -->
+
+            <h2>Página inicial</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti sed obcaecati aliquam eveniet illum
+                iusto porro dolor itaque eum et quibusdam ipsa alias architecto tenetur, aperiam, inventore aliquid,
+                earum iure?</p>
+
+        </section>
+        <aside class="p-3 bg-dark-subtle flex-shrink-0">
+            <!-- 
+        Exemplo de conteúdo desta página.
+        No futuro, virá do back-end.
+      -->
+            <h3>Mais coisas</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolorum, aliquid facere accusamus enim
+                eaque soluta dolores.</p>
+        </aside>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-secondary text-light">
+
+    <div class="container">
+      <div class="footer-top row">
+        <div class="col-6">
+          <h5>Redes Sociais</h5>
+          <nav class="d-flex flex-column">
+            <a href="#" target="_blank">Link 1</a>
+            <a href="#" target="_blank">Link 2</a>
+            <a href="#" target="_blank">Link 3</a>
+            <a href="#" target="_blank">Link 4</a>
+          </nav>
+        </div>
+
+        <div class="d-none">
+          <h5>Parceiros</h5>
+          <nav class="d-flex flex-column">
+            <a href="#" target="_blank">Link 1</a>
+            <a href="#" target="_blank">Link 2</a>
+            <a href="#" target="_blank">Link 3</a>
+            <a href="#" target="_blank">Link 4</a>
+          </nav>
+        </div>
+
+        <div class="col-6">
+          <h5>Acesso rápido</h5>
+          <nav class="d-flex flex-column">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="footer-botton d-flex align-items-center justify-content-between">
+        <a href="index.html"><i class="bi bi-house-door-fill"></i></a>
+        <div>&copy; 2026 Strapinho</div>
+        <a href="#top"><i class="bi bi-arrow-up-square-fill"></i></a>
+      </div>
+    </div>
+
+  </footer>
 
     <!-- 
         Bootstrap5: Importa o componente JavaScript da CDN.
@@ -63,8 +197,8 @@
         salvo em casos especiais.
         Obtido de https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-links
     -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
